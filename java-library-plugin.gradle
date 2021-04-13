@@ -1,0 +1,20 @@
+if (!properties.containsKey("java-library-plugin.version")) {
+  throw new InvalidUserDataException("Missing [java-library-plugin.version] property provided. Please provide a valid version " +
+      "within gradle.properties file.")
+}
+String version = properties.get("java-library-plugin.version")
+String baseURL = "https://raw.githubusercontent.com/rivancic/gradle-versioned-script-plugin/"
+logger.info(
+"""
+Applying Java Library Plugin
+
+Base URL: ${baseURL}
+Version: ${version}
+
+It contians following plugins:
+- Java
+- Junit Test
+""")
+
+apply from: "${baseURL}${version}/java-plugin.gradle"
+apply from: "${baseURL}${version}/unit-test-plugin.gradle"
