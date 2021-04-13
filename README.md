@@ -12,6 +12,32 @@ Modular is an additional functionality for this example.
 
 ## Usage
 
+You can import two different flavors of modularized plugins:
+
+1) To configure build functionality for Java libraries:
+
+`apply from: 'https://raw.githubusercontent.com/rivancic/gradle-versioned-modular-script-plugin/v1.0/java-library-plugin.gradle'`
+
+It will include:
+- Java
+- Junit Test
+
+2) Configuring build pipeline for Spring Boot application:
+
+`apply from: 'https://raw.githubusercontent.com/rivancic/gradle-versioned-modular-script-plugin/v1.0/spring-application-plugin.gradle'`
+
+It will include:
+- Java
+- Spring Boot
+- Junit
+- Cucumber + Selenium E2E
+
+Note: A specific version of the plugin can be provided, check release notes for changes or additional functinality in 
+different versions.
+
+
+## Explanation
+
 In concrete example the emphasis is put on the plugin modularity.
 This is logical next step after extracting build logic from the main build.gradle file.
 Its guaranteed that the build logic in bigger project will expand with specific requirements we have to be able

@@ -1,0 +1,24 @@
+if (!properties.containsKey("spring-application-plugin.version")) {
+  throw new InvalidUserDataException("Missing [spring-application-plugin.version] property provided. Please provide a valid version " +
+      "within gradle.properties file.")
+}
+String version = properties.get("spring-application-plugin.version")
+String baseURL = "https://raw.githubusercontent.com/rivancic/gradle-versioned-modular-script-plugin/"
+logger.info(
+"""
+Applying Spring Application Plugin
+
+Base URL: ${baseURL}
+Version: ${version}
+
+It contians following plugins:
+- Java
+- Spring Boot
+- Junit
+- Cucumber + Selenium E2E
+""")
+
+apply from: "${baseURL}${version}/java-plugin.gradle"
+apply from: "${baseURL}${version}/spring-boot-plugin.gradle"
+apply from: "${baseURL}${version}/unit-test-plugin.gradle"
+apply from: "${baseURL}${version}/cucumber-e2e-test-plugin.gradle"

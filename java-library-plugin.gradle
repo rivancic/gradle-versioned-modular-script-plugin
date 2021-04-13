@@ -3,7 +3,7 @@ if (!properties.containsKey("java-library-plugin.version")) {
       "within gradle.properties file.")
 }
 String version = properties.get("java-library-plugin.version")
-String baseURL = "https://raw.githubusercontent.com/rivancic/gradle-versioned-script-plugin/"
+String baseURL = "https://raw.githubusercontent.com/rivancic/gradle-versioned-modular-script-plugin/"
 logger.info(
 """
 Applying Java Library Plugin
